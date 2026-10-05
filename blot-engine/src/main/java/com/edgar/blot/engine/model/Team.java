@@ -84,6 +84,10 @@ public final class Team {
         return basePoints(rank);
     }
 
+    public void clearWonCards() {
+        wonCards.clear();
+    }
+
     private int basePoints(Rank rank) {
         return switch (rank) {
             case ACE -> 11;
@@ -95,5 +99,4 @@ public final class Team {
         };
     }
 }
-
 

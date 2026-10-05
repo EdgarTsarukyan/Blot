@@ -23,4 +23,18 @@ public class Deck {
     public List<Card> getCards() {
         return Collections.unmodifiableList(cards);
     }
+
+    /**
+     * Deals (removes and returns) the top card from the deck.
+     *
+     * @return the dealt {@link Card}
+     * @throws IllegalStateException if the deck is empty
+     */
+    public Card dealCard() {
+        if (cards.isEmpty()) {
+            throw new IllegalStateException("Cannot deal from an empty deck");
+        }
+        // Remove from the end to keep this O(1)
+        return cards.remove(cards.size() - 1);
+    }
 }
